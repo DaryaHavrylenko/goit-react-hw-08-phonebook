@@ -6,13 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
 import { getContact } from 'redux/contacts/selectors';
 import { Box, Flex, Button, FormLabel } from '@chakra-ui/react';
-import { useToast } from '@chakra-ui/react';
 
 export const Form = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const contacts = useSelector(getContact);
-  const toast = useToast();
+
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -73,18 +72,7 @@ export const Form = () => {
             value={number}
             id={numberId}
           />
-          <Button
-            type="submit"
-            mt="5"
-            onClick={() =>
-              toast({
-                title: 'Your contact is adding.',
-                status: 'success',
-                duration: 9000,
-                isClosable: true,
-              })
-            }
-          >
+          <Button type="submit" mt="5">
             Add contact
           </Button>
         </form>
