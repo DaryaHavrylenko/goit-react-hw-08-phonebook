@@ -1,12 +1,15 @@
+import { Heading } from '@chakra-ui/react';
+
 export default function Home() {
   return (
     <div>
-      <h1>
-        Contacts manager welcome page{' '}
+      <Heading as="h1" size="lg" fontSize="30px">
+        Hello! It's your contacts book{' '}
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>
-      </h1>
+        This you can save contacts.
+      </Heading>
     </div>
   );
 }

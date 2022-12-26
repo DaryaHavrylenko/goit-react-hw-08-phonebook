@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from '../../redux/auth/operations';
 import { useAuth } from 'hooks';
+import { Button } from '@chakra-ui/react';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -9,9 +10,9 @@ export const UserMenu = () => {
   return (
     <div>
       <p>Welcome, {user.name}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
+      <Button type="button" size="sm" onClick={() => dispatch(logOut())}>
         Logout
-      </button>
+      </Button>
     </div>
   );
 };

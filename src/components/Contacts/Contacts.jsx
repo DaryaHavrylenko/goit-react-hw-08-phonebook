@@ -1,5 +1,6 @@
 //import PropTypes from 'prop-types';
-import { List, Item, Text, Button } from './Contacts.styled';
+//mport { List, Item, Text, Button } from './Contacts.styled';
+import { Button, UnorderedList, ListItem } from '@chakra-ui/react';
 import { getContact, getFilter } from 'redux/contacts/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
@@ -15,12 +16,12 @@ export const Contacts = () => {
   );
 
   return (
-    <List>
+    <UnorderedList>
       {filterContactList.map(({ id, name, number }) => (
-        <Item key={id}>
-          <Text>
+        <ListItem key={id}>
+          <p>
             {name}: {number}
-          </Text>
+          </p>
           <Button
             onClick={() => {
               dispatch(deleteContact(id));
@@ -28,9 +29,9 @@ export const Contacts = () => {
           >
             Delete
           </Button>
-        </Item>
+        </ListItem>
       ))}
-    </List>
+    </UnorderedList>
   );
 };
 

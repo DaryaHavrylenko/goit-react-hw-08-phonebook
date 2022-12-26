@@ -1,8 +1,9 @@
 //import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { Label, Input } from './Filter.styled';
+//import { Label, Input } from './Filter.styled';
 import { getFilter } from '../../redux/contacts/selectors';
 import { filterContact } from '../../redux/contacts/filterSlice';
+import { Input, FormLabel } from '@chakra-ui/react';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -13,8 +14,9 @@ export const Filter = () => {
   };
   return (
     <>
-      <Label>Find contacts by name</Label>
+      <FormLabel>Find contacts by name</FormLabel>
       <Input
+        w="100"
         type="text"
         name="filter"
         value={filter}

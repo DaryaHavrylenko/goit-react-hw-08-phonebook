@@ -1,7 +1,17 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import { useState } from 'react';
+import {
+  Input,
+  Box,
+  InputGroup,
+  Button,
+  InputRightElement,
+  FormLabel,
+} from '@chakra-ui/react';
 
 export const LoginForm = () => {
+  const [show, setShow] = useState(false);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -15,18 +25,29 @@ export const LoginForm = () => {
     );
     form.reset();
   };
-
+  const handleClick = () => setShow(!show);
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <Box as="section" pt="10">
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <FormLabel>
+          Email
+          <Input type="email" name="email" />
+        </FormLabel>
+        <FormLabel>
+          Password
+          <InputGroup>
+            <Input type={show ? 'text' : 'password'} name="password" />
+            <InputRightElement width="4.5rem">
+              <Button h="1.75rem" size="sm" onClick={handleClick}>
+                {show ? 'Hide' : 'Show'}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
+        </FormLabel>
+        <Button type="submit" mt="10">
+          Log In
+        </Button>
+      </form>
+    </Box>
   );
 };
