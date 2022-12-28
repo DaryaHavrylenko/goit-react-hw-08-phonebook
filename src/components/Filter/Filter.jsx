@@ -21,6 +21,7 @@ export const Filter = () => {
         name="filter"
         value={filter}
         onChange={getFilterValue}
+        focusBorderColor="#E9D8FD"
       />
     </>
   );

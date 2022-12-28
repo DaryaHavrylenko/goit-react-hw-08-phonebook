@@ -6,6 +6,7 @@ import { fetchContacts } from '../redux/contacts/operations';
 import { Form } from '../components/Form/Form';
 import { Contacts } from '../components/Contacts/Contacts';
 import { Filter } from 'components/Filter/Filter';
+import { Flex } from '@chakra-ui/react';
 
 export default function ContactsList() {
   const dispatch = useDispatch();
@@ -20,9 +21,14 @@ export default function ContactsList() {
       <Helmet>
         <title>Your contacts</title>
       </Helmet>
-      <Form />
-      <div>{isLoading && 'Request in progress...'}</div>
+      <Flex justifyContent="flex-start" py="10">
+        <Form />
+      </Flex>
+
       <Filter />
+
+      <div>{isLoading && 'Request in progress...'}</div>
+
       <Contacts />
     </>
   );

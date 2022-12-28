@@ -30,20 +30,24 @@ export const RegisterForm = () => {
   const handleClick = () => setShow(!show);
 
   return (
-    <Box as="section" pt="10">
+    <Box as="section" pt="20">
       <form onSubmit={handleSubmit} autoComplete="off">
         <FormLabel>
           Username
-          <Input type="text" name="name" />
+          <Input type="text" name="name" focusBorderColor="#E9D8FD" />
         </FormLabel>
         <FormLabel>
           Email
-          <Input type="email" name="email" />
+          <Input type="email" name="email" focusBorderColor="#E9D8FD" />
         </FormLabel>
         <FormLabel>
           Password
           <InputGroup>
-            <Input type={show ? 'text' : 'password'} name="password" />
+            <Input
+              type={show ? 'text' : 'password'}
+              name="password"
+              focusBorderColor="#E9D8FD"
+            />
             <InputRightElement width="4.5rem">
               <Button h="1.75rem" size="sm" onClick={handleClick}>
                 {show ? 'Hide' : 'Show'}
@@ -51,7 +55,7 @@ export const RegisterForm = () => {
             </InputRightElement>
           </InputGroup>
         </FormLabel>
-        <Button type="submit" mt="10">
+        <Button type="submit" mt="10" variant="outline" colorScheme="purple">
           Register
         </Button>
       </form>

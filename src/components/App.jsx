@@ -10,6 +10,7 @@ import { Layout } from './Layout';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Box, Divider } from '@chakra-ui/react';
+
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
@@ -25,7 +26,7 @@ export const App = () => {
 
   return (
     <ChakraProvider>
-      <Box bg="#E6FFFA" minH="100vh" p="5">
+      <Box minH="100vh" p="5" position="relative">
         {isRefreshing ? (
           <b>Refreshing user...</b>
         ) : (

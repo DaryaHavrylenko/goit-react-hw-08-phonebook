@@ -4,6 +4,7 @@ import { Button, UnorderedList, ListItem } from '@chakra-ui/react';
 import { getContact, getFilter } from 'redux/contacts/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
+import { MdDeleteForever } from 'react-icons/md';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
@@ -23,11 +24,13 @@ export const Contacts = () => {
             {name}: {number}
           </p>
           <Button
+            color="#F6AD55"
+            variant="outline"
             onClick={() => {
               dispatch(deleteContact(id));
             }}
           >
-            Delete
+            <MdDeleteForever size="1.5rem" />
           </Button>
         </ListItem>
       ))}
