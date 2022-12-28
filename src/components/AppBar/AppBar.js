@@ -17,8 +17,18 @@ export const AppBar = () => {
 
   const { isLoggedIn } = useAuth();
   return (
-    <Container maxW="container.lg" p="5">
-      <Box as="header" py={2} w="100%" position="relative">
+    <Container
+      maxW="container.lg"
+      p="5"
+      bgGradient="linear(to-r, yellow.200, blue.500)"
+    >
+      <Box
+        as="header"
+        py={2}
+        w="100%"
+        position="relative"
+        bgGradient="linear(to-r, green.200, pink.500)"
+      >
         <Flex justifyContent="space-between" aline-items="center">
           <IconButton
             aria-label="toggle theme"
@@ -27,6 +37,8 @@ export const AppBar = () => {
             position="absolute"
             top="15%"
             left="74%"
+            variant="outline"
+            colorScheme="purple"
             onClick={toggleColorMode}
             icon={colorMode === 'dark' ? <FaSun /> : <FaMoon />}
           />

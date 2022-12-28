@@ -1,6 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
-//import styled from 'styled-components';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Footer } from './Footer/Footer';
